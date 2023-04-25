@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+    .supe *{
+        background-color: white;
+    }
+    body{
+        text-align: center;
+    }
+    .supe {
+   margin-top: -90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+      background-color: #FFE699;
+  }
+    form{
+     background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+
+    width: 350px;
+
+}
+     input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 170px;
+      background-color: white;
+  }
+button[type="submit"] {
+    background-color: #4d90fe;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    margin-top: 8px;
+}
+    </style>
+     <h1>Address Form</h1>
+   <div class="supe">
+
+         <br>
+<form method="POST" action="{% url 'address_create' %}"  >
+ {% csrf_token %}
+  <p>
+    <label for="id_full_name">Full name:</label>
+    <input type="text" name="full_name" maxlength="255" required="" id="id_full_name">
+  </p>
+  <p>
+    <label for="id_mobile_number">Mobile:&nbsp&nbsp&nbsp&nbsp</label>
+    <input type="text" name="mobile_number" maxlength="20" required="" id="id_mobile_number">
+  </p>
+  <p>
+    <label for="id_pincode">Pincode:&nbsp&nbsp </label>
+    <input type="text" name="pincode" maxlength="20" required="" id="id_pincode">
+  </p>
+  <p>
+    <label for="id_house_no">House no:</label>
+    <input type="text" name="house_no" maxlength="20" required="" id="id_house_no">
+  </p>
+  <p>
+    <label for="id_street">Street:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    <input type="text" name="street" maxlength="255" required="" id="id_street">
+  </p>
+  <p>
+    <label for="id_landmark">Landmark:</label>
+    <input type="text" name="landmark" maxlength="255" required="" id="id_landmark">
+  </p>
+  <p>
+    <label for="id_city">City:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    <input type="text" name="city" maxlength="255" required="" id="id_city">
+  </p>
+  <button type="submit">Save</button>
+</form>
+</div>
+{% endblock %}
